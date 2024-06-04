@@ -1,5 +1,4 @@
 import 'dart:io';
-
 void main(List<String> args) {
   /* Realizar un algoritmo que permita solicitar una clave numéricaal usuario y no permitir continuar hasta que no ingrese la clave válida */
 
@@ -18,8 +17,6 @@ void main(List<String> args) {
     if ( cantIntentos >= 3 ){
       print("Ya supero los intentos");
     }
-    
-  
     
   } while (clave != correcta  && cantIntentos < 3);
 }

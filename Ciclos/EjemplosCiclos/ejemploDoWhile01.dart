@@ -1,5 +1,4 @@
 import 'dart:io';
-
 void main(List<String> args) {
   int num, suma = 0;
 

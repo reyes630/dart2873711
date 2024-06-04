@@ -25,7 +25,4 @@ void main(List<String> args) {
   } else {
     print("Usted no aprobó");
   }
-
-
-
 }
