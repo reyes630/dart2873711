@@ -13,12 +13,7 @@ void main(List<String> args) {
         vector[j] = vector[j + 1];
         vector[j + 1] = auxiliar;
       }
-      print(vector);
-      
-    }
-    
+      print(vector); 
+    } 
   }
-
-
-
 }
