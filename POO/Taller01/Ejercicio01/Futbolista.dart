@@ -42,11 +42,12 @@ class Futbolista extends Persona{
   }
 
   void mostrarInfo() {
-    this.mostrarInfo();
+    super.mostrarInfo(); //Llama al metodo de persona
     print("""
     El equipo es: $_equipo
     La posicion es: $_posicion
     La cantidad de goles es:$cantidadGoles
+    Es titular: ${esTitular()}
     """);
   }
 

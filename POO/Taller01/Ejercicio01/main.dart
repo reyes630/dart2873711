@@ -1,3 +1,4 @@
+
 import 'Futbolista.dart';
 import 'Persona.dart';
 import 'dart:io';
@@ -5,12 +6,14 @@ import 'dart:io';
 import 'Programador.dart';
 
 void main(List<String> args) {
+  String nombre;
+  int edad;
 
   print("Bienvenido");
   print("Ingrese el nombre");
-  String nombre = stdin.readLineSync()!;
+  nombre = stdin.readLineSync()!;
   print("Ingrese la edad");
-  int edad = int.parse(stdin.readLineSync()!);
+  edad = int.parse(stdin.readLineSync()!);
   Persona persona1 = Persona(nombre, edad);
   
   print("Nombre: ${persona1.getNombre()}");  // Usa print para mostrar los resultados
@@ -43,9 +46,9 @@ void main(List<String> args) {
 
   for (var i = 0; i < cantObjetos; i++) {
 
-    print("Ingrese el nombre del futbolista ${i + 1}");
+    print("Ingrese el nombre del Programador${i + 1}");
     nombre = stdin.readLineSync()!;
-    print("Ingrese la edad del futbolista ${nombre}");
+    print("Ingrese la edad del Progrmador ${nombre}");
     edad = int.parse(stdin.readLineSync()!); 
     print("Ingrese la empresa a la que pertenece ${nombre}");
     String empresa = stdin.readLineSync()!;
@@ -57,35 +60,43 @@ void main(List<String> args) {
     
   }
 
-  int option = 0;
-  print("Ingrese una opcion");
-  print("""
-    1.Informacion Futbolistas
-    2. Informacion programadores
-      """);
-  switch(option) {
-    case 1:
-      void mostrarInfo( List<Futbolista> listFutbolistas) {
-        for (var i = 0; i < listFutbolistas.length; i++) {
-          listFutbolistas[i].mostrarInfo();
+    void mostrarInfoFutbolistas(List<Futbolista> listFutbolistas) {
+        for (var futbolista in listFutbolistas) {
+          futbolista.mostrarInfo(); 
         }
       }
-     
+
+    void mostrarInfoProgramadores(List<Programador> listProgramador) {
+      for (var programador in listProgramador) {
+        programador.mostrarInfo(); 
+      }
+    }
+
+  int option = 0;
+  while (option != 3) {
+
+  print("Ingrese una opcion");
+  print("""
+    1. Informacion Futbolistas
+    2. Informacion programadores
+    3. Salir
+      """);
+  option = int.parse(stdin.readLineSync()!);
+  switch(option) {
+    case 1:
+      mostrarInfoFutbolistas(listFutbolistas);
       break;
     case 2:
+      mostrarInfoProgramadores(listProgramador);
     break;
     case 3:
+    print("Esta saliendo...");
     break;
     default:
+    print("Ingrese un valor valido");
 
   }
-
-  
-
-
-
-
-
-
+  }
+    
 
 }

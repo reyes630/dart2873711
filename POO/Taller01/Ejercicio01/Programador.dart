@@ -24,15 +24,15 @@ class Programador extends Persona {
   }
 
   double obtenerSalarioNeto() {
-    return _salario;
+    return _salario - (_salario * 0.11);
   }
 
   void mostrarInfo() {
-    this.mostrarInfo();
+    super.mostrarInfo();
     print("""
     La empresa es: $_empresa
     El salario es: $_salario
-    El salario neto es: 
+    El salario neto es: ${obtenerSalarioNeto()} 
     """);
   }
 }
